@@ -13,6 +13,10 @@ from sklearn.naive_bayes import GaussianNB
 import xgboost as xgb
 import matplotlib.pyplot as plt
 
+st.set_page_config(
+    page_title="Model Selection"
+)
+
 st.title("ML Model Selection Web App")
 st.subheader("by [Junaid Saleem](https://github.com/JunaidSalim)")
 
