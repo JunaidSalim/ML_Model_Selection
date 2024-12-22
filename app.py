@@ -14,7 +14,7 @@ import xgboost as xgb
 import matplotlib.pyplot as plt
 
 st.title("Machine Learning Web App")
-st.subheader("by Junaid Saleem")
+st.subheader("by [Junaid Saleem](https://github.com/JunaidSalim)")
 
 uploadedFile = st.file_uploader("Upload your dataset (CSV)", type=["csv"])
 
