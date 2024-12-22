@@ -1,10 +1,7 @@
-pip
-setuptools
-wheel
 streamlit
 pandas
 scikit-learn
-numpy
+numpy==1.23.5 
 matplotlib
 xgboost
 Cython
