@@ -6,4 +6,4 @@ numpy==2.2.1
 matplotlib==3.8.0
 xgboost==1.7.6
 Cython==0.29.36
-catboost==1.2.0 
+catboost==1.2.0
