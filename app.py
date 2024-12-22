@@ -11,7 +11,6 @@ from sklearn.pipeline import make_pipeline
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 import xgboost as xgb
-from catboost import CatBoostRegressor, CatBoostClassifier
 import matplotlib.pyplot as plt
 
 st.title("Machine Learning Web App")
@@ -106,7 +105,6 @@ if uploadedFile:
         rfNEstimators = hyperCols[0].number_input("Random Forest: Estimators", 10, 500, 100)
         xgbLearningRate = hyperCols[1].number_input("XGBoost: Learning Rate", 0.01, 1.0, 0.1)
         xgbNEstimators = hyperCols[2].number_input("XGBoost: Estimators", 10, 500, 100)
-        catboostIterations = hyperCols[0].number_input("CatBoost: Iterations", 10, 1000, 100)
 
         models = {
             "Multiple Linear Regression": LinearRegression(),
@@ -114,8 +112,7 @@ if uploadedFile:
             "SVR": SVR(C=svrC, kernel=svrKernel),
             "Decision Tree Regression": DecisionTreeRegressor(max_depth=dtMaxDepth),
             "Random Forest Regression": RandomForestRegressor(n_estimators=rfNEstimators),
-            "XGBoost Regression": xgb.XGBRegressor(learning_rate=xgbLearningRate, n_estimators=xgbNEstimators),
-            "CatBoost Regression": CatBoostRegressor(iterations=catboostIterations, verbose=0)
+            "XGBoost Regression": xgb.XGBRegressor(learning_rate=xgbLearningRate, n_estimators=xgbNEstimators)
         }
 
         results = []
@@ -144,7 +141,6 @@ if uploadedFile:
         rfNEstimators = hyperCols[1].number_input("Random Forest: Estimators", 10, 500, 100)
         xgbLearningRate = hyperCols[2].number_input("XGBoost: Learning Rate", 0.01, 1.0, 0.1)
         xgbNEstimators = hyperCols[0].number_input("XGBoost: Estimators", 10, 500, 100)
-        catboostIterations = hyperCols[1].number_input("CatBoost: Iterations", 10, 1000, 100)
 
         models = {
             "Logistic Regression": LogisticRegression(max_iter=1000),
@@ -153,8 +149,7 @@ if uploadedFile:
             "Naive Bayes": GaussianNB(),
             "Decision Tree": DecisionTreeClassifier(max_depth=dtMaxDepth),
             "Random Forest": RandomForestClassifier(n_estimators=rfNEstimators),
-            "XGBoost": xgb.XGBClassifier(learning_rate=xgbLearningRate, n_estimators=xgbNEstimators),
-            "CatBoost": CatBoostClassifier(iterations=catboostIterations, verbose=0)
+            "XGBoost": xgb.XGBClassifier(learning_rate=xgbLearningRate, n_estimators=xgbNEstimators)
         }
 
         if targetFeature.nunique() > 2:
