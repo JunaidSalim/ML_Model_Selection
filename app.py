@@ -26,7 +26,18 @@ if uploadedFile:
     data = pd.read_csv(uploadedFile)
     st.write("Dataset Preview:")
     st.write(data.head())
-
+    
+    st.write("Dataset Statistics:")
+    st.write(data.describe())
+    
+    summary_df = pd.DataFrame({
+    'Missing Values': data.isnull().sum(),
+    'Data Types': data.dtypes
+})
+    
+    st.write("Dataset Info:")
+    st.write(summary_df)
+    
     st.write("Feature Distribution:")
     numericColumns = data.select_dtypes(include=['float64', 'int64']).columns
     if len(numericColumns) == 0:
