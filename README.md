@@ -29,6 +29,7 @@ Deployed at: [https://mlmodelselection.streamlit.app/](https://mlmodelselection.
    streamlit run app.py 
 
    # With CatBoost Model
+   pip install catboost
    streamlit run main.py 
    ```
 
