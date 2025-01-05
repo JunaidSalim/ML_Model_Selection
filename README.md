@@ -25,7 +25,11 @@ Deployed at: [https://mlmodelselection.streamlit.app/](https://mlmodelselection.
    ```
 4. Run the application:
    ```bash
-   streamlit run app.py
+   # Without CatBoost Model
+   streamlit run app.py 
+
+   # With CatBoost Model
+   streamlit run main.py 
    ```
 
 ## Functionality
